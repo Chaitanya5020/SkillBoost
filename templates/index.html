@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBoost - Enhance Your Career</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+     <div class="front">
+                <!-- Navigation Bar -->
+      <nav class="navbar">
+        <div class="logo">SkillBoost</div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/career-guidance">Career Guidance</a></li>
+            <li><a href="/skillquiz">Skill Quiz</a></li>
+            <li><a href="#">Upload & Test</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Boost Your Skills & Find Your Career</h1>
+            <p>Get AI-driven career recommendations, test your skills, and explore new opportunities.</p>
+            <div class="buttons">
+                <a href="#" class="btn primary">Get Started</a>
+                <a href="#" class="btn secondary">Watch Video</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="Hero Image">
+        </div>
+    </header>
+     </div>
+   
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/career.png') }}" alt="Career Image">
+            <h2>Career Recommendation</h2>
+            <p>AI-powered recommendations based on your skills and preferences.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/takequiz.png') }}" alt="Takequiz Image">
+            <h2>Skill Level Quiz</h2>
+            <p>Assess your expertise in different career paths with interactive quizzes.</p>
+        </div>
+        <div class="feature">
+            <img src="{{ url_for('static', filename='images/upload.png') }}" alt="Documentbasedquiz Image">
+            <h2>Upload & Test</h2>
+            <p>Upload study material or documents and generate quizzes instantly.</p>
+        </div>
+    </section>
+
+    <!-- Include JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBoost - Enhance Your Career</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skillquiz.css') }}">
+</head>
+<body>
+
+    <div class="front">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">SkillBoost</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/career-guidance">Career Guidance</a></li>
+                <li><a href="/skillquiz" id="generateQuizLink">Skill Quiz</a></li>
+                <li><a href="#">Upload & Test</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="career-hero">
+            <div class="hero-content">
+                <h1>Find Your Perfect Career Match</h1>  
+                <p>Take a skills-based quiz to uncover careers that align with your strengths and interests.</p>
+            </div>
+        </header>
+     </div>
+
+    <!-- Career Quiz Section -->
+    <section id="careerQuiz" class="quiz-section">
+    <div class="quiz-container">
+        <h2>Select Your Career Path to Generate a Quiz</h2>
+        <form id="careerForm" action="/takequiz" target="_blank">
+            <label for="career-select">Choose your career:</label>
+            <select id="career-select" name="career">
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Web Developer">Web Developer</option>
+                <option value="Mobile App Developer">Mobile App Developer</option>
+                <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Cloud Engineer">Cloud Engineer</option>
+                <option value="DevOps Engineer">DevOps Engineer</option>
+                <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                <option value="AI Engineer">AI Engineer</option>
+                <option value="Blockchain Developer">Blockchain Developer</option>
+                <option value="Full-Stack Developer">Full-Stack Developer</option>
+                <option value="Game Developer">Game Developer</option>
+                <option value="Embedded Systems Engineer">Embedded Systems Engineer</option>
+                <option value="IoT Developer">IoT Developer</option>
+                <option value="Database Administrator (DBA)">Database Administrator (DBA)</option>
+                <option value="Network Engineer">Network Engineer</option>
+                <option value="QA Engineer">QA Engineer</option>
+                <option value="Big Data Engineer">Big Data Engineer</option>
+                <option value="Systems Analyst">Systems Analyst</option>
+                <option value="AR/VR Developer">AR/VR Developer</option>
+                <option value="UI/UX Designer">UI/UX Designer</option>
+                <option value="Robotics Engineer">Robotics Engineer</option>
+                <option value="Ethical Hacker">Ethical Hacker</option>
+                <option value="IT Support Specialist">IT Support Specialist</option>
+                <option value="Business Intelligence Analyst">Business Intelligence Analyst</option>
+                <option value="Automation Engineer">Automation Engineer</option>
+                <option value="Technical Writer">Technical Writer</option>
+                <option value="Product Manager">Product Manager</option>
+                <option value="SEO Specialist">SEO Specialist</option>
+                <option value="System Administrator">System Administrator</option>
+                <option value="Blockchain Architect">Blockchain Architect</option>
+                <option value="Technical Consultant">Technical Consultant</option>
+                <option value="Video Editor">Video Editor</option>
+                <option value="Financial Analyst">Financial Analyst</option>
+                <option value="CAD Designer">CAD Designer</option>
+                <option value="Energy Engineer">Energy Engineer</option>
+                <option value="Biomedical Engineer">Biomedical Engineer</option>
+                <option value="Supply Chain Analyst">Supply Chain Analyst</option>
+                <option value="Actuary">Actuary</option>
+                <option value="E-Learning Developer">E-Learning Developer</option>
+                <option value="Operations Research Analyst">Operations Research Analyst</option>
+                <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+                <option value="Sound Engineer">Sound Engineer</option>
+                <option value="Research Scientist">Research Scientist</option>
+                <option value="HR Data Analyst">HR Data Analyst</option>
+                <option value="AI Ethics Specialist">AI Ethics Specialist</option>
+                <option value="Quantum Computing Researcher">Quantum Computing Researcher</option>
+                <option value="3D Printing Specialist">3D Printing Specialist</option>
+                <option value="Environmental Data Analyst">Environmental Data Analyst</option>
+                <option value="Mobile Security Analyst">Mobile Security Analyst</option>
+                <option value="Game Tester">Game Tester</option>
+                <option value="Digital Twin Engineer">Digital Twin Engineer</option>
+                <option value="VR Environment Designer">VR Environment Designer</option>
+                <option value="Bioinformatics Scientist">Bioinformatics Scientist</option>
+                <option value="Agile Coach">Agile Coach</option>
+                <option value="CRM Developer">CRM Developer</option>
+                <option value="Smart Grid Engineer">Smart Grid Engineer</option>
+                <option value="Satellite Engineer">Satellite Engineer</option>
+                <option value="Autonomous Vehicle Engineer">Autonomous Vehicle Engineer</option>
+                <option value="Edge Computing Specialist">Edge Computing Specialist</option>
+                <option value="Renewable Energy Analyst">Renewable Energy Analyst</option>
+                <option value="Natural Language Processing Engineer">Natural Language Processing Engineer</option>
+                <option value="Video Game Story Writer">Video Game Story Writer</option>
+                <option value="IT Compliance Manager">IT Compliance Manager</option>
+                <option value="Data Governance Specialist">Data Governance Specialist</option>
+                <!-- Add more career options as needed -->
+            </select>
+            <button type="submit" class="btn primary">Generate Quiz</button>
+        </form>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading-spinner" style="display: none;">
+            <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="Loading...">
+            <p>Generating quiz... Please wait.</p>
+        </div>
+
+        <!-- Quiz Box -->
+        <div id="quizBox" class="quiz-box" style="display: none;">
+            <h3>Your Generated Quiz</h3>
+            <div id="quizQuestions"></div>
+            <button id="submitQuiz" class="btn primary" style="display: none;">Submit Quiz</button>
+        </div>
+    </div>
+</section>
+</body>
+</html>

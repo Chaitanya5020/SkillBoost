@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance - SkillBoost</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/career-guidance.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+     <div class="front">
+        <nav class="navbar">
+            <div class="logo">SkillBoost</div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Career Guidance</a></li>
+                <li><a href="/skillquiz">Skill Quiz</a></li>
+                <li><a href="#"c:\Users\chait\OneDrive\Desktop\Questiongeneration\templates\questions.html>Upload & Test</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Hero Section -->
+        <header class="career-hero">
+            <div class="hero-content">
+                <h1>Discover Your Ideal Career Path</h1>
+                <p>Get personalized career recommendations based on your skills and aspirations.</p>
+            </div>
+        </header>
+     </div>
+
+
+    <!-- Career Guidance Section -->
+    <section class="career-container">
+        <h2>Career Recommendations</h2>
+        <p>Simply enter your skills to receive tailored career suggestions.</p>
+
+        <input type="text" id="skillsInput" placeholder="Enter skills (e.g., Python, HTML, CSS)">
+        <button onclick="getRecommendations()">Get Recommendations</button>
+
+        <div id="recommendations"></div>
+    </section>
+    <script src="{{ url_for('static', filename='js/career-guidance.js') }}"></script>
+
+</body>
+</html>
